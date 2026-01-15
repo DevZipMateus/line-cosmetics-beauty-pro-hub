@@ -1,4 +1,6 @@
 import { Heart, Target, Eye, Star } from "lucide-react";
+import teamFair from "@/assets/gallery/team-fair.jpg";
+import delivery from "@/assets/gallery/delivery.jpg";
 
 const About = () => {
   return (
@@ -12,21 +14,35 @@ const About = () => {
           <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
         </div>
 
-        {/* História */}
-        <div className="max-w-4xl mx-auto mb-20">
-          <div className="bg-card rounded-2xl p-8 md:p-12 shadow-sm">
-            <h3 className="text-2xl md:text-3xl font-heading font-semibold text-primary mb-6">
-              Nossa história
-            </h3>
-            <p className="text-muted-foreground font-body leading-relaxed text-lg mb-4">
-              Em 2016, a Line Cosméticos teve sua origem ligada a uma empresa já estabelecida no mercado. 
-              Em 2023, assumimos de forma independente, impulsionados pelo propósito de entender, na prática, 
-              a rotina dos profissionais de salão.
-            </p>
-            <p className="text-muted-foreground font-body leading-relaxed text-lg">
-              Levamos produtos que atendem às suas necessidades, valorizando cada detalhe do seu trabalho, 
-              talento e dedicação.
-            </p>
+        {/* História com imagens */}
+        <div className="max-w-6xl mx-auto mb-20">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="bg-card rounded-2xl p-8 md:p-10 shadow-sm">
+              <h3 className="text-2xl md:text-3xl font-heading font-semibold text-primary mb-6">
+                Nossa história
+              </h3>
+              <p className="text-muted-foreground font-body leading-relaxed text-lg mb-4">
+                Em 2016, a Line Cosméticos teve sua origem ligada a uma empresa já estabelecida no mercado. 
+                Em 2023, assumimos de forma independente, impulsionados pelo propósito de entender, na prática, 
+                a rotina dos profissionais de salão.
+              </p>
+              <p className="text-muted-foreground font-body leading-relaxed text-lg">
+                Levamos produtos que atendem às suas necessidades, valorizando cada detalhe do seu trabalho, 
+                talento e dedicação.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <img
+                src={teamFair}
+                alt="Equipe Line Cosméticos em feira de beleza"
+                className="rounded-2xl shadow-md object-cover w-full h-48 md:h-56"
+              />
+              <img
+                src={delivery}
+                alt="Entrega de produtos com carinho"
+                className="rounded-2xl shadow-md object-cover w-full h-48 md:h-56"
+              />
+            </div>
           </div>
         </div>
 
