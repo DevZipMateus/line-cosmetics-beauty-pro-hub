@@ -1,4 +1,6 @@
 import { Sparkles, Package, Zap, Armchair } from "lucide-react";
+import cosmeticsFlatlay from "@/assets/cosmetics-flatlay.jpg";
+import nailProducts from "@/assets/nail-products.jpg";
 
 const products = [
   {
@@ -40,6 +42,30 @@ const Products = () => {
             Tudo o que seu espaço de beleza precisa para oferecer serviços de excelência
           </p>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-6" />
+        </div>
+
+        {/* Featured Images */}
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+            <img 
+              src={cosmeticsFlatlay} 
+              alt="Produtos cosméticos profissionais para cabelo" 
+              className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent flex items-end p-6">
+              <p className="text-primary-foreground font-heading font-medium text-xl">Cosméticos Capilares</p>
+            </div>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+            <img 
+              src={nailProducts} 
+              alt="Esmaltes e ferramentas para manicure profissional" 
+              className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent flex items-end p-6">
+              <p className="text-primary-foreground font-heading font-medium text-xl">Manicure & Pedicure</p>
+            </div>
+          </div>
         </div>
 
         {/* Products Grid */}

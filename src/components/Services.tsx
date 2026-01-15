@@ -1,4 +1,5 @@
 import { GraduationCap, HeadphonesIcon } from "lucide-react";
+import salonEquipment from "@/assets/salon-equipment.jpg";
 
 const services = [
   {
@@ -19,15 +20,25 @@ const Services = () => {
   return (
     <section id="servicos" className="section-padding bg-background">
       <div className="container-custom">
-        {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-semibold text-foreground mb-4">
-            Nossos serviços
-          </h2>
-          <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
-            Além de produtos, oferecemos suporte completo para o seu crescimento profissional
-          </p>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-6" />
+        {/* Section Title with Image */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-semibold text-foreground mb-4">
+              Nossos serviços
+            </h2>
+            <p className="text-lg text-muted-foreground font-body max-w-2xl">
+              Além de produtos, oferecemos suporte completo para o seu crescimento profissional
+            </p>
+            <div className="w-24 h-1 bg-primary rounded-full mt-6" />
+          </div>
+          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            <img 
+              src={salonEquipment} 
+              alt="Equipamentos profissionais de salão de beleza" 
+              className="w-full h-64 lg:h-80 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-transparent" />
+          </div>
         </div>
 
         {/* Services Grid */}
