@@ -1,8 +1,17 @@
 import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react";
+import sectionBg2 from "@/assets/section-bg-2.jpg";
 
 const Contact = () => {
   return (
-    <section id="contato" className="section-padding bg-secondary/30">
+    <section id="contato" className="relative section-padding overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${sectionBg2})` }}
+      >
+        <div className="absolute inset-0 bg-background/80" />
+      </div>
+      <div className="relative z-10">
       <div className="container-custom">
         {/* Section Title */}
         <div className="text-center mb-16">
@@ -121,6 +130,7 @@ const Contact = () => {
               referrerPolicy="no-referrer-when-downgrade"
               title="Localização Line Cosméticos - Avenida Cônego Luiz Walter Hanquet, 203 - Camaquã/RS"
             />
+          </div>
           </div>
         </div>
       </div>
