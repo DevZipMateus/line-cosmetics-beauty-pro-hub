@@ -1,6 +1,9 @@
 import { Sparkles, Package, Zap, Armchair } from "lucide-react";
 import cosmeticsFlatlay from "@/assets/cosmetics-flatlay.jpg";
 import nailProducts from "@/assets/nail-products.jpg";
+import lashBrow from "@/assets/lash-brow.jpg";
+import waxingProducts from "@/assets/waxing-products.jpg";
+import hairColor from "@/assets/hair-color.jpg";
 
 const products = [
   {
@@ -29,6 +32,34 @@ const products = [
   },
 ];
 
+const productImages = [
+  {
+    src: cosmeticsFlatlay,
+    alt: "Produtos cosméticos profissionais para cabelo",
+    label: "Cosméticos Capilares"
+  },
+  {
+    src: nailProducts,
+    alt: "Esmaltes e ferramentas para manicure profissional",
+    label: "Manicure & Pedicure"
+  },
+  {
+    src: hairColor,
+    alt: "Produtos para coloração capilar profissional",
+    label: "Coloração"
+  },
+  {
+    src: lashBrow,
+    alt: "Produtos para design de sobrancelhas e cílios",
+    label: "Design de Sobrancelhas"
+  },
+  {
+    src: waxingProducts,
+    alt: "Produtos profissionais para depilação",
+    label: "Depilação"
+  },
+];
+
 const Products = () => {
   return (
     <section id="produtos" className="section-padding bg-secondary/30">
@@ -44,28 +75,20 @@ const Products = () => {
           <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-6" />
         </div>
 
-        {/* Featured Images */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
-          <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-            <img 
-              src={cosmeticsFlatlay} 
-              alt="Produtos cosméticos profissionais para cabelo" 
-              className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent flex items-end p-6">
-              <p className="text-primary-foreground font-heading font-medium text-xl">Cosméticos Capilares</p>
+        {/* Featured Images - Grid with 5 images */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16">
+          {productImages.map((image, index) => (
+            <div key={index} className="relative rounded-2xl overflow-hidden shadow-lg group">
+              <img 
+                src={image.src} 
+                alt={image.alt} 
+                className="w-full h-48 md:h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent flex items-end p-4">
+                <p className="text-primary-foreground font-heading font-medium text-sm md:text-base">{image.label}</p>
+              </div>
             </div>
-          </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-            <img 
-              src={nailProducts} 
-              alt="Esmaltes e ferramentas para manicure profissional" 
-              className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent flex items-end p-6">
-              <p className="text-primary-foreground font-heading font-medium text-xl">Manicure & Pedicure</p>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Products Grid */}
