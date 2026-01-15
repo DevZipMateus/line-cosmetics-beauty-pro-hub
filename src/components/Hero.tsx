@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   const handleWhatsAppClick = () => {
@@ -12,12 +13,15 @@ const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-secondary to-background overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl" />
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/80" />
       </div>
 
       <div className="container-custom relative z-10 pt-20 pb-16 px-4">
@@ -27,7 +31,7 @@ const Hero = () => {
             <img
               src={logo}
               alt="Line Cosméticos"
-              className="h-32 md:h-40 lg:h-48 w-auto mx-auto"
+              className="h-32 md:h-40 lg:h-48 w-auto mx-auto drop-shadow-lg"
             />
           </div>
 
@@ -35,12 +39,12 @@ const Hero = () => {
           <h1 className="sr-only">Line Cosméticos</h1>
 
           {/* Slogan */}
-          <p className="text-xl md:text-2xl lg:text-3xl font-heading font-medium text-primary mb-6 animate-slide-up">
+          <p className="text-xl md:text-2xl lg:text-3xl font-heading font-medium text-primary mb-6 animate-slide-up drop-shadow-sm">
             Feita para profissionais da beleza!
           </p>
 
           {/* H2 - Descrição */}
-          <h2 className="text-lg md:text-xl text-muted-foreground font-body leading-relaxed max-w-2xl mx-auto mb-10 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+          <h2 className="text-lg md:text-xl text-foreground/80 font-body leading-relaxed max-w-2xl mx-auto mb-10 animate-slide-up drop-shadow-sm" style={{ animationDelay: "0.2s" }}>
             Sua parceira de confiança em cosméticos profissionais. Produtos de alta performance 
             para cabeleireiros, manicures, depiladoras e designers que transformam autoestima todos os dias.
           </h2>
@@ -60,7 +64,7 @@ const Hero = () => {
               onClick={() => {
                 document.querySelector("#produtos")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-medium transition-all duration-300"
+              className="border-primary text-primary bg-background/80 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-medium transition-all duration-300"
             >
               Conheça nossos produtos
             </Button>
