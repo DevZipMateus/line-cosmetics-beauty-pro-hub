@@ -1,0 +1,89 @@
+import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
+
+const Hero = () => {
+  const handleWhatsAppClick = () => {
+    window.open(
+      "https://wa.me/5551998232246?text=Olá! Gostaria de saber mais sobre os produtos da Line Cosméticos.",
+      "_blank"
+    );
+  };
+
+  return (
+    <section
+      id="inicio"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-secondary to-background overflow-hidden"
+    >
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl" />
+      </div>
+
+      <div className="container-custom relative z-10 pt-20 pb-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Logo */}
+          <div className="mb-8 animate-fade-in">
+            <img
+              src={logo}
+              alt="Line Cosméticos"
+              className="h-32 md:h-40 lg:h-48 w-auto mx-auto"
+            />
+          </div>
+
+          {/* H1 - Nome da empresa */}
+          <h1 className="sr-only">Line Cosméticos</h1>
+
+          {/* Slogan */}
+          <p className="text-xl md:text-2xl lg:text-3xl font-heading font-medium text-primary mb-6 animate-slide-up">
+            Feita para profissionais da beleza!
+          </p>
+
+          {/* H2 - Descrição */}
+          <h2 className="text-lg md:text-xl text-muted-foreground font-body leading-relaxed max-w-2xl mx-auto mb-10 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+            Sua parceira de confiança em cosméticos profissionais. Produtos de alta performance 
+            para cabeleireiros, manicures, depiladoras e designers que transformam autoestima todos os dias.
+          </h2>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{ animationDelay: "0.4s" }}>
+            <Button
+              onClick={handleWhatsAppClick}
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Fale conosco
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => {
+                document.querySelector("#produtos")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-medium transition-all duration-300"
+            >
+              Conheça nossos produtos
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Decorative bottom curve */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg
+          viewBox="0 0 1440 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-auto"
+        >
+          <path
+            d="M0 100V50C240 16.67 480 0 720 0C960 0 1200 16.67 1440 50V100H0Z"
+            fill="hsl(var(--background))"
+          />
+        </svg>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
