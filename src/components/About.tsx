@@ -1,10 +1,19 @@
 import { Heart, Target, Eye, Star } from "lucide-react";
 import teamFair from "@/assets/gallery/team-fair.jpg";
 import delivery from "@/assets/gallery/delivery.jpg";
+import sectionBg1 from "@/assets/section-bg-1.jpg";
 
 const About = () => {
   return (
-    <section id="sobre" className="section-padding bg-background">
+    <section id="sobre" className="relative section-padding overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${sectionBg1})` }}
+      >
+        <div className="absolute inset-0 bg-background/85" />
+      </div>
+      <div className="relative z-10">
       <div className="container-custom">
         {/* Section Title */}
         <div className="text-center mb-16">
@@ -119,6 +128,7 @@ const About = () => {
             "Acreditamos que a beleza vai além da estética. Ela fortalece a autoestima, promove 
             bem-estar e impacta positivamente a forma como as pessoas se veem e vivem."
           </blockquote>
+        </div>
         </div>
       </div>
     </section>
