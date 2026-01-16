@@ -4,13 +4,13 @@ const WhatsAppButton = () => {
       href="https://wa.me/5551998232246?text=Olá! Gostaria de saber mais sobre os produtos da Line Cosméticos."
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
       aria-label="Conversar pelo WhatsApp"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 32 32"
-        className="w-7 h-7 fill-white"
+        className="w-6 h-6 sm:w-7 sm:h-7 fill-white"
       >
         <path d="M16.002 0C7.167 0 0 7.166 0 16.002c0 2.82.736 5.576 2.136 8.004L0 32l8.234-2.16A15.94 15.94 0 0 0 16.002 32C24.838 32 32 24.834 32 16.002 32 7.166 24.838 0 16.002 0zm0 29.332a13.28 13.28 0 0 1-6.768-1.85l-.486-.288-5.032 1.32 1.344-4.908-.316-.502a13.22 13.22 0 0 1-2.026-7.102C2.718 8.638 8.64 2.718 16.002 2.718c7.362 0 13.28 5.92 13.28 13.284 0 7.362-5.918 13.33-13.28 13.33zm7.284-9.952c-.398-.2-2.358-1.164-2.724-1.296-.366-.134-.632-.2-.898.2-.266.398-1.032 1.296-1.264 1.562-.232.266-.464.3-.862.1-.398-.2-1.68-.62-3.2-1.976-1.182-1.054-1.98-2.356-2.212-2.754-.232-.398-.024-.614.174-.812.178-.178.398-.464.598-.696.2-.232.266-.398.398-.664.134-.266.066-.498-.032-.698-.1-.2-.898-2.164-1.232-2.962-.324-.778-.654-.672-.898-.686l-.766-.012c-.266 0-.698.1-1.064.498-.366.398-1.398 1.364-1.398 3.328 0 1.964 1.432 3.862 1.632 4.128.2.266 2.818 4.304 6.828 6.034.954.412 1.698.658 2.278.842.958.304 1.83.262 2.52.16.768-.116 2.358-.964 2.69-1.896.332-.93.332-1.73.232-1.896-.1-.166-.366-.266-.764-.466z" />
       </svg>

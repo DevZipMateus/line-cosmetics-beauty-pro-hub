@@ -30,7 +30,7 @@ const Vitrine = () => {
       <Header />
       <main 
         className="w-full overflow-hidden"
-        style={{ height: 'calc(100vh - 80px)', marginTop: '80px' }}
+        style={{ height: 'calc(100vh - 64px)', marginTop: '64px' }}
       >
         <iframe 
           src="https://linecosmeticos.egestor.com.br/vitrine/" 
