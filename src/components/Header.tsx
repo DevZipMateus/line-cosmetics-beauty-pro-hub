@@ -1,18 +1,22 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const navItems = [
-  { label: "Início", href: "#inicio" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Produtos", href: "#produtos" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Contato", href: "#contato" },
+  { label: "Início", href: "#inicio", isAnchor: true },
+  { label: "Sobre", href: "#sobre", isAnchor: true },
+  { label: "Produtos", href: "#produtos", isAnchor: true },
+  { label: "Vitrine", href: "/vitrine", isAnchor: false },
+  { label: "Serviços", href: "#servicos", isAnchor: true },
+  { label: "Contato", href: "#contato", isAnchor: true },
 ];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,8 +26,20 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string, isAnchor: boolean) => {
     setIsMobileMenuOpen(false);
+    
+    if (!isAnchor) {
+      navigate(href);
+      return;
+    }
+
+    // If we're not on the home page, navigate there first
+    if (location.pathname !== "/") {
+      navigate("/" + href);
+      return;
+    }
+
     const element = document.querySelector(href);
     if (element) {
       const headerHeight = 80;
@@ -35,30 +51,38 @@ const Header = () => {
     }
   };
 
+  const handleLogoClick = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-background/95 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
+          : "bg-background/95 backdrop-blur-md"
       }`}
     >
       <div className="container-custom">
         <nav className="flex items-center justify-between h-20 px-4 md:px-8">
-          <a href="#inicio" className="flex items-center">
+          <button onClick={handleLogoClick} className="flex items-center">
             <img
               src={logo}
               alt="Line Cosméticos - Logo"
               className="h-12 md:h-14 w-auto"
             />
-          </a>
+          </button>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <li key={item.href}>
                 <button
-                  onClick={() => handleNavClick(item.href)}
+                  onClick={() => handleNavClick(item.href, item.isAnchor)}
                   className="font-body text-sm font-medium text-foreground hover:text-primary transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {item.label}
@@ -84,7 +108,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <li key={item.href}>
                   <button
-                    onClick={() => handleNavClick(item.href)}
+                    onClick={() => handleNavClick(item.href, item.isAnchor)}
                     className="w-full text-left px-6 py-3 font-body text-foreground hover:text-primary hover:bg-secondary/50 transition-colors"
                   >
                     {item.label}
