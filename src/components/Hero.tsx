@@ -1,13 +1,20 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   const handleWhatsAppClick = () => {
     window.open(
       "https://wa.me/5551998232246?text=Olá! Gostaria de saber mais sobre os produtos da Line Cosméticos.",
       "_blank"
     );
+  };
+
+  const handleVitrineClick = () => {
+    navigate("/vitrine");
   };
 
   return (
@@ -61,9 +68,7 @@ const Hero = () => {
             <Button
               variant="outline"
               size="lg"
-              onClick={() => {
-                document.querySelector("#produtos")?.scrollIntoView({ behavior: "smooth" });
-              }}
+              onClick={handleVitrineClick}
               className="border-primary text-primary bg-background/80 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-medium transition-all duration-300"
             >
               Conheça nossos produtos
