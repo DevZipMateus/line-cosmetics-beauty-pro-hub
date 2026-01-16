@@ -1,4 +1,5 @@
 import { Sparkles, Package, Zap, Armchair } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import cosmeticsFlatlay from "@/assets/cosmetics-flatlay.jpg";
 import nailProducts from "@/assets/nail-products.jpg";
 import lashBrow from "@/assets/lash-brow.jpg";
@@ -61,6 +62,12 @@ const productImages = [
 ];
 
 const Products = () => {
+  const navigate = useNavigate();
+
+  const handleProductClick = () => {
+    navigate('/vitrine');
+  };
+
   return (
     <section id="produtos" className="section-padding bg-secondary/30">
       <div className="container-custom">
@@ -78,7 +85,11 @@ const Products = () => {
         {/* Featured Images - Grid with 5 images */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16">
           {productImages.map((image, index) => (
-            <div key={index} className="relative rounded-2xl overflow-hidden shadow-lg group">
+            <div 
+              key={index} 
+              className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+              onClick={handleProductClick}
+            >
               <img 
                 src={image.src} 
                 alt={image.alt} 
