@@ -7,10 +7,21 @@ const Vitrine = () => {
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
     
+    // Hide MonteSite badge on this page
+    const badge = document.querySelector('[id*="montesite"], [class*="montesite"], [id*="badge"], .badge-montesite') as HTMLElement;
+    if (badge) {
+      badge.style.display = 'none';
+    }
+    
     return () => {
       // Restore scroll when leaving
       document.body.style.overflow = '';
       document.documentElement.style.overflow = '';
+      
+      // Restore badge visibility
+      if (badge) {
+        badge.style.display = '';
+      }
     };
   }, []);
 
@@ -19,7 +30,7 @@ const Vitrine = () => {
       <Header />
       <main 
         className="w-full overflow-hidden"
-        style={{ height: 'calc(100vh - 80px - 63px)', marginTop: '80px' }}
+        style={{ height: 'calc(100vh - 80px)', marginTop: '80px' }}
       >
         <iframe 
           src="https://linecosmeticos.egestor.com.br/vitrine/" 
