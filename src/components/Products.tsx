@@ -70,52 +70,52 @@ const Products = () => {
 
   return (
     <section id="produtos" className="section-padding bg-secondary/30">
-      <div className="container-custom">
+      <div className="container-custom px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-semibold text-foreground mb-4">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-semibold text-foreground mb-4">
             Nossos produtos
           </h2>
-          <p className="text-lg text-muted-foreground font-body max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground font-body max-w-2xl mx-auto px-2">
             Tudo o que seu espaço de beleza precisa para oferecer serviços de excelência
           </p>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-6" />
+          <div className="w-20 sm:w-24 h-1 bg-primary mx-auto rounded-full mt-4 sm:mt-6" />
         </div>
 
         {/* Featured Images - Grid with 5 images */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mb-10 sm:mb-16">
           {productImages.map((image, index) => (
             <div 
               key={index} 
-              className="relative rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+              className={`relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg group cursor-pointer ${index === 4 ? 'col-span-2 sm:col-span-1' : ''}`}
               onClick={handleProductClick}
             >
               <img 
                 src={image.src} 
                 alt={image.alt} 
-                className="w-full h-48 md:h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent flex items-end p-4">
-                <p className="text-primary-foreground font-heading font-medium text-sm md:text-base">{image.label}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent flex items-end p-3 sm:p-4">
+                <p className="text-primary-foreground font-heading font-medium text-xs sm:text-sm md:text-base">{image.label}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Products Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {products.map((product, index) => (
             <div
               key={index}
-              className="bg-background rounded-2xl p-8 shadow-sm card-hover group"
+              className="bg-background rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-sm card-hover group"
             >
-              <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
-                <product.icon className="w-8 h-8 text-primary-foreground" />
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-accent transition-colors duration-300">
+                <product.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
               </div>
-              <h3 className="text-xl font-heading font-semibold text-foreground mb-3">
+              <h3 className="text-lg sm:text-xl font-heading font-semibold text-foreground mb-2 sm:mb-3">
                 {product.title}
               </h3>
-              <p className="text-muted-foreground font-body leading-relaxed">
+              <p className="text-sm sm:text-base text-muted-foreground font-body leading-relaxed">
                 {product.description}
               </p>
             </div>
@@ -123,15 +123,15 @@ const Products = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
-          <p className="text-lg text-muted-foreground font-body mb-6">
+        <div className="mt-10 sm:mt-16 text-center">
+          <p className="text-base sm:text-lg text-muted-foreground font-body mb-4 sm:mb-6 px-2">
             Quer conhecer nosso catálogo completo?
           </p>
           <a
             href="https://wa.me/5551998232246?text=Olá! Gostaria de conhecer o catálogo de produtos da Line Cosméticos."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
           >
             Entre em contato pelo WhatsApp
           </a>
