@@ -31,10 +31,10 @@ const Vitrine = () => {
       
       {/* Banner promocional para cabeleireiras */}
       <div 
-        className="w-full bg-primary text-primary-foreground py-2 px-4 text-center"
+        className="w-full bg-primary text-primary-foreground py-3 sm:py-4 px-4 text-center"
         style={{ marginTop: '64px' }}
       >
-        <p className="text-xs sm:text-sm font-medium">
+        <p className="text-sm sm:text-base font-medium leading-relaxed">
           <span className="font-bold">Você é Cabeleireira?</span>
           <span className="hidden sm:inline"> — </span>
           <br className="sm:hidden" />
