@@ -1,10 +1,11 @@
-import { Sparkles, Package, Zap, Armchair } from "lucide-react";
+import { Sparkles, Package, Zap, Armchair, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import cosmeticsFlatlay from "@/assets/cosmetics-flatlay.jpg";
 import nailProducts from "@/assets/nail-products.jpg";
 import lashBrow from "@/assets/lash-brow.jpg";
 import waxingProducts from "@/assets/waxing-products.jpg";
 import hairColor from "@/assets/hair-color.jpg";
+import safetySupplies from "@/assets/safety-supplies.jpg";
 
 const products = [
   {
@@ -14,8 +15,8 @@ const products = [
       "Produtos de marcas exclusivas e reconhecidas no mercado para tratamentos capilares, coloração, finalização e muito mais.",
   },
   {
-    icon: Package,
-    title: "Produtos descartáveis",
+    icon: Shield,
+    title: "Segurança e descartáveis",
     description:
       "Materiais voltados à segurança e higiene dos espaços de beleza, garantindo a proteção de profissionais e clientes.",
   },
@@ -52,12 +53,17 @@ const productImages = [
   {
     src: lashBrow,
     alt: "Produtos para design de sobrancelhas e cílios",
-    label: "Design de Sobrancelhas"
+    label: "Design de Sobrancelhas e Cílios"
   },
   {
     src: waxingProducts,
     alt: "Produtos profissionais para depilação",
     label: "Depilação"
+  },
+  {
+    src: safetySupplies,
+    alt: "Produtos de segurança e descartáveis para salões",
+    label: "Segurança e Descartáveis"
   },
 ];
 
@@ -82,21 +88,21 @@ const Products = () => {
           <div className="w-20 sm:w-24 h-1 bg-primary mx-auto rounded-full mt-4 sm:mt-6" />
         </div>
 
-        {/* Featured Images - Grid with 5 images */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mb-10 sm:mb-16">
+        {/* Featured Images - Grid with 6 images */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mb-10 sm:mb-16">
           {productImages.map((image, index) => (
             <div 
               key={index} 
-              className={`relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg group cursor-pointer ${index === 4 ? 'col-span-2 sm:col-span-1' : ''}`}
+              className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
               onClick={handleProductClick}
             >
               <img 
                 src={image.src} 
                 alt={image.alt} 
-                className="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-40 sm:h-48 md:h-52 object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent flex items-end p-3 sm:p-4">
-                <p className="text-primary-foreground font-heading font-medium text-xs sm:text-sm md:text-base">{image.label}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent flex items-end p-3 sm:p-4">
+                <p className="text-primary-foreground font-heading font-medium text-xs sm:text-sm">{image.label}</p>
               </div>
             </div>
           ))}
