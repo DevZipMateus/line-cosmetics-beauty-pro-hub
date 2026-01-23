@@ -50,35 +50,35 @@ const VitrineSection = () => {
 
         {/* Product Preview Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-8 sm:mb-12">
-          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => navigate("/vitrine")}>
+          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-md group cursor-pointer bg-card" onClick={() => navigate("/vitrine")}>
             <img 
               src={cosmeticsFlatlay} 
               alt="Cosméticos Capilares" 
-              className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+              className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent flex flex-col items-center justify-end p-4 sm:p-6 text-center">
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent flex flex-col items-center justify-end p-4 sm:p-6 text-center">
               <p className="text-primary-foreground font-heading font-bold text-lg sm:text-xl mb-1">Linha Capilar</p>
               <p className="text-primary-foreground/80 font-body text-xs sm:text-sm">+500 produtos</p>
             </div>
           </div>
-          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => navigate("/vitrine")}>
+          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-md group cursor-pointer bg-card" onClick={() => navigate("/vitrine")}>
             <img 
               src={hairColor} 
               alt="Coloração Profissional" 
-              className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+              className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-accent/90 via-accent/40 to-transparent flex flex-col items-center justify-end p-4 sm:p-6 text-center">
+            <div className="absolute inset-0 bg-gradient-to-t from-accent/70 via-transparent to-transparent flex flex-col items-center justify-end p-4 sm:p-6 text-center">
               <p className="text-accent-foreground font-heading font-bold text-lg sm:text-xl mb-1">Coloração</p>
               <p className="text-accent-foreground/80 font-body text-xs sm:text-sm">Todas as marcas</p>
             </div>
           </div>
-          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg group cursor-pointer sm:col-span-2 md:col-span-1" onClick={() => navigate("/vitrine")}>
+          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-md group cursor-pointer bg-card sm:col-span-2 md:col-span-1" onClick={() => navigate("/vitrine")}>
             <img 
               src={nailProducts} 
               alt="Manicure e Pedicure" 
-              className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+              className="w-full h-48 sm:h-56 md:h-64 object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent flex flex-col items-center justify-end p-4 sm:p-6 text-center">
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent flex flex-col items-center justify-end p-4 sm:p-6 text-center">
               <p className="text-primary-foreground font-heading font-bold text-lg sm:text-xl mb-1">Manicure</p>
               <p className="text-primary-foreground/80 font-body text-xs sm:text-sm">Esmaltes e acessórios</p>
             </div>
